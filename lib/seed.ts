@@ -1,9 +1,8 @@
-import { Redis } from '@upstash/redis'
-import { arrayBuffer } from 'stream/consumers';
+import { Redis } from '@upstash/redis';
 
 const redis = new Redis({
-  url: 'https://rapid-giraffe-49560.upstash.io',
-  token:'AcGYASQgZDlkODkzYjUtMjY3ZC00YjJkLWE0NDgtNzNjMGRhZGFkYjk0M2EyZmZhYmIzOWFjNDdjOGE0Y2E5NzI3YzdhMDQ2YWY=',
+  url: process.env.UPSTASH_REDIS_REST_URL || '',
+  token:process.env.UPSTASH_REDIS_REST_TOKEN || '',
 })
 
 const countryList = [
